@@ -34,7 +34,7 @@ FingerprintJS.load().then(fp => {
     fp.get().then(result => {
 
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', '/api/getDesiredResult.php', false); // Senkron istek
+        xhr.open('POST', 'https://ogedaybonuslari.com/api/getDesiredResult.php', false); // Senkron istek
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify({
             f: result.visitorId
