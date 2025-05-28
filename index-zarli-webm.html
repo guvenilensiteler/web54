@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ogedaypro | Oynadığım Güvenilir Siteler</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <!-- Ana görev: zar ile ilgili return olan mesajı alert etmek için yazılmış script. Yardımcı görev: eğer istenirse başka alertler içinde kullanılabilir.-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let url = new URL(window.location.href);
+            let params = new URLSearchParams(url.search);
+            if (params.has('islem') || params.has('mesaj') ) {
+                if (typeof Swal !== 'undefined') {
+                    Swal.fire({
+                        icon: params.get('islem'),
+                        title: 'Bilgi',
+                        text: decodeURIComponent(params.get('mesaj')), // Unutma! text: olmak zorunda! html: yaparsan XSS oluşur..
+                    }).then(() => {
+                        window.history.pushState({}, document.title, document.URL.split("?")[0]);
+                    });
+                } else {
+                    alert(decodeURIComponent(params.get('mesaj')));
+                }
+            }
+
+            if (window.location.hash.indexOf('tgWebAppData') > -1) {
+                document.querySelector('body').style.transform = "scale(0.40)";
+                document.querySelector('body').style.transformOrigin = "top left";
+                //document.querySelector('.container').style.left = "-256px";
+
+                /*
+                document.querySelector('dotlottie-player').style.top = "1955px";
+                let style = document.querySelector('#tg-kaldir');
+                let cssContent = style.textContent;
+                const mediaQueryRegex = /@media\s*\(max-width:\s*1000px\)\s*{[^}]*}/g;
+                cssContent = cssContent.replace(mediaQueryRegex, '');
+                style.textContent = cssContent;
+                */
+            }
+        });
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CNY8GVCJJS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-CNY8GVCJJS');
+    </script>
+    <meta name="yandex-verification" content="44feed403ddb0c5d" />
+    <script>
+        // HTTPS Sorunu Fix
+        if (document.URL.startsWith('http://')) {
+            window.location.href = document.URL.replace('http://','https://');
+        }
+    </script>
+    <!-- main css -->
+    <style>
+        .d-none {
+            display: none !important;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Body'e ilave kod eklerken index.php'yi ayarlamayı unutma generate_html2() */
+        body { background: radial-gradient(circle, #6b6e3e 10%, transparent 11%);
+        background-size: 1em 1em;
+        background-color: #1c1c1c;
+        opacity: 1; }/**/
+        .container {
+            max-width: 943px;
+            margin: 10px auto;
+            display: grid;
+            gap: 10px;
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            align-content: start;
+        }
+        .banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .split-banner {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        /* card1 spesification start */
+        #cards1 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+            justify-content: center;
+        }
+        #cards1 > .card {
+            flex: 0 0 calc(20% - 8px);
+            box-sizing: border-box;
+        }
+        /* card1 spesification end */
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        a {
+            text-decoration: none;
+        }
+        .mt-10px {
+            margin-top: 10px !important;
+        }
+    </style>
+    <!-- üst vip ışıltı 1 css -->
+    <style>
+        .card-container {
+            display: flex;
+            gap: 20px;
+        }
+        .rectangle2 {
+            position: relative;
+            border: 2px solid transparent;
+            animation: glowingBorder2 4.2s infinite;
+            border-radius: 32px;
+        }
+        /* Delays for sequential glowing and fading, adjusted for 1.5s duration */
+        /*START*/.rectangle2:nth-child(1) {
+                    animation-delay: 0s;
+                }.rectangle2:nth-child(2) {
+                    animation-delay: 0.375s;
+                }.rectangle2:nth-child(3) {
+                    animation-delay: 0.75s;
+                }.rectangle2:nth-child(4) {
+                    animation-delay: 1.125s;
+                }.rectangle2:nth-child(5) {
+                    animation-delay: 1.5s;
+                }.rectangle2:nth-child(6) {
+                    animation-delay: 1.875s;
+                }.rectangle2:nth-child(7) {
+                    animation-delay: 2.25s;
+                }.rectangle2:nth-child(8) {
+                    animation-delay: 2.625s;
+                }.rectangle2:nth-child(9) {
+                    animation-delay: 3s;
+                }/*END*/
+
+        @keyframes glowingBorder2 {
+            0% {
+                box-shadow: none;
+                border-color: transparent;
+            }
+            12.5% {
+                box-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc, 0 0 9px #00ffcc;
+                border-color: #00ffcc;
+            }
+            25% {
+                box-shadow: 0 0 6px #ff00ff, 0 0 9px #ff00ff, 0 0 12px #ff00ff;
+                border-color: #ff00ff;
+            }
+            37.5% {
+                box-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc, 0 0 9px #00ffcc;
+                border-color: #00ffcc;
+            }
+            50% {
+                box-shadow: none;
+                border-color: transparent;
+            }
+            100% {
+                box-shadow: none;
+                border-color: transparent;
+            }
+        }
+    </style>
+    <!-- split banner css -->
+    <style>
+        .split-banner a, .split-banner img {
+            all: unset !important;
+            display: block !important;
+            text-decoration: none !important;
+            border: none !important;
+            outline: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            line-height: 0 !important;
+            vertical-align: top !important;
+        }
+        .split-banner a {
+            cursor: pointer !important;
+        }
+        .split-banner img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>
+    <!-- orta vip ışıltı 2 css -->
+    <style>
+        .yeni-vip {
+            grid-template-columns: repeat(3, 1fr);
+            padding: 23px 10px 0px 10px;
+            gap: 5px;
+        }
+        .yeni-vip-bg {
+            background: url('images/bg-viplerim.png');
+            width: 943px;
+            height: 382px;
+            position: relative;
+            animation: fancyBorder 2s infinite ease-in-out;
+        }
+        .yeni-vip-bg::after {
+            animation: shadowAnimation 2s infinite ease-in-out;
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            border-radius: 10px;
+        }
+        @keyframes shadowAnimation {
+            0% {
+                box-shadow: 0 0 17px lightyellow;
+            }
+            50% {
+                box-shadow: 0 0 14px rgba(255, 255, 0, 0.35);
+            }
+            100% {
+                box-shadow: 0 0 12px rgba(255, 255, 0, 0.75);
+            }
+        }
+        .yeni-vip .card:nth-child(1) {
+        }
+        .yeni-vip .card:nth-child(2) {
+        }
+        .yeni-vip .card:nth-child(3) {
+        }
+        .yeni-vip .card:nth-child(4) {
+        }
+        .yeni-vip .card:nth-child(5) {
+        }
+        .yeni-vip .card:nth-child(6) {
+        }
+        .wrapper {
+            position: relative;
+            transition: all 200ms ease;
+        }
+        .inside {
+            position: relative;
+            overflow: hidden;
+            border-radius: 27px;
+            padding-right: 6px;
+        }
+        .inside img {
+            width: 100%;
+            height: auto;
+            border-radius: 27px;
+            border: 1px solid black;
+            transition: all 200ms ease;
+            position: relative;
+            margin: 3px;
+        }
+        @keyframes MyRotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            33% {
+                transform: rotate(120deg);
+            }
+            66% {
+                transform: rotate(210deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .shiny {
+            filter: blur(5px);
+            position: absolute;
+            inset: 50% -70% -70% 50%;
+            transition: all 300ms ease;
+            background: linear-gradient(
+                    to left,
+                    transparent,
+                    #ffffff,
+                    var(--shiny-color),
+                    transparent 100%
+            ) no-repeat;
+            transform-origin: 0 0;
+        }
+        /*shiny_start*/
+		.shiny.s1 { --shiny-color: #ff1376; }
+		.shiny.s2 { --shiny-color: #ff9612; }
+		.shiny.s3 { --shiny-color: #1fe1ff; }
+		.shiny.s4 { --shiny-color: #8ffd54; }
+		.shiny.s5 { --shiny-color: #00c683; }
+		.shiny.s6 { --shiny-color: #ce5024; }
+		/*shiny_end*/
+        .wrapper .shiny {
+            animation: MyRotate 2s infinite linear;
+        }
+    </style>
+    <!-- isMobile() -->
+    <script>
+        function isMobile() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if (/android/i.test(userAgent)) {
+                return true;
+            }
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return true;
+            }
+            if (window.innerWidth < 1350) {
+                return true;
+            }
+            return false;
+        }
+    </script>
+    <style>
+        /*
+        .kralbet-special-light {
+            border-bottom-color: rgb(255, 255, 255);
+            box-shadow: rgb(255, 255, 255) 0px 0px 3.24641px 0px, rgb(255, 255, 255) 0px 0px 6.24641px 0px, rgb(255, 255, 255) 0px 0px 9.24641px 0px;
+            border-left-color: rgb(255, 255, 255);
+            border-right-color: rgb(255, 255, 255);
+            border-top-color: rgb(255, 255, 255);
+        }
+        */
+    </style>
+    <script>
+        // ek istek kralbet
+        window.onload = function () {
+            document.querySelector('.banner:has(img[alt="kralbet"])').classList.add('rectangle2');
+            document.querySelector('.banner:has(img[alt="kralbet"])').style.borderRadius = '5px';
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <!-- Bannerlar Alanı -->
+    <div class="banners"><div class="banner">
+                <a href="https://www.zzztrack.com/click?key=ce767e16b233d6c224a9&amp;uid=K0WTyv07bOfsU33jTRXrkQXFVih2" target="_blank">
+                    <img src="images/banner/misty.png?v=0.28657471634754" alt="misty" loading="lazy">
+                </a>
+                
+            </div><div class="banner mt-10px">
+                <a href="http://t.me/ogedaychat" target="_blank">
+                    <img src="images/banner/telegram.gif" alt="telegram" loading="lazy">
+                </a>
+                
+            </div><div class="banner mt-10px">
+                <a href="https://cutt.ly/orsPX9O1" target="_blank">
+                    <video autoplay loop muted playsinline>
+                        <source src="images/banner/kralbet.webm?v=0.77983927250832" type="video/webm">
+                    </video>
+                </a>
+                
+            </div><div class="banner mt-10px">
+                <a href="https://t2m.io/mersoogeday" target="_blank">
+                    <video autoplay loop muted playsinline>
+                        <source src="images/banner/mersobahis.webm?v=0.77983927250832" type="video/webm">
+                    </video>
+                </a>
+                
+            </div><div class="split-banner mt-10px">
+                <a href="https://cutt.ly/veoT5cGq" target="_blank">
+                    <video autoplay loop muted playsinline>
+                        <source src="images/banner/matadorbet.webm?v=0.77983927250832" type="video/webm">
+                    </video>
+                </a>
+                <a href="https://cutt.ly/Feg1piJG" target="_blank">
+                    <video autoplay loop muted playsinline>
+                        <source src="images/banner/fixbet.webm?v=0.77983927250832" type="video/webm">
+                    </video>
+                    </a>
+            </div></div><hr class="d-none special-hidden1">
+
+    <!-- Kartlar1 Alanı -->
+    <div class="cards" id="cards1"><div class="card rectangle2">
+                <a href="https://cutt.ly/orsPX9O1" target="_blank">
+                    <video autoplay loop muted playsinline>
+                        <source src="images/content/kralbet.webm?v=0.77983927250832" type="video/webm">
+                    </video>
+                </a>
+            </div><div class="card rectangle2">
+                <a href="https://t2m.io/mersoogeday" target="_blank">
+                    <img src="images/content/mersobahis.png?v=0.24151677463274" alt="mersobahis">
+                </a>
+            </div><div class="card rectangle2">
+                <a href="https://cutt.ly/1eME5M9j" target="_blank">
+                    <img src="images/content/betkanyon.png?v=0.47045134029838" alt="betkanyon">
+                </a>
+            </div><div class="card rectangle2">
+                <a href="https://bit.ly/ogexsekabet" target="_blank">
+                    <img src="images/content/sekabet.png" alt="sekabet">
+                </a>
+            </div><div class="card rectangle2">
+                <a href="https://rstuv.click/ba/btag/546_15042" target="_blank">
+                    <img src="images/content/bahisal.png?v=0.3860729343193" alt="bahisal">
+                </a>
+            </div><div class="card rectangle2">
+                <a href="https://qstub.click/KA/btag/5_52211" target="_blank">
+                    <img src="images/content/kasino.png" alt="kasino">
+                </a>
+            </div><div class="card rectangle2">
+                <a href="https://www.zzztrack.com/click?key=ce767e16b233d6c224a9&amp;uid=K0WTyv07bOfsU33jTRXrkQXFVih2" target="_blank">
+                    <img src="images/content/mistyyy.png?v=0.13359856518619" alt="mistyyy">
+                </a>
+            </div><div class="card rectangle2">
+                <a href="https://cutt.ly/OgedaySP" target="_blank">
+                    <img src="images/content/spinco.png" alt="spinco">
+                </a>
+            </div><div class="card rectangle2">
+                <a href="https://kisalt1.gg/ogedaypro" target="_blank">
+                    <img src="images/content/galabet.png?v=0.76992064284623" alt="galabet">
+                </a>
+            </div></div><hr class="d-none special-hidden2">
+
+    <!-- Viplerim Alanı -->
+    <div class="yeni-vip-bg"><div class="cards yeni-vip"><div class="card">
+                <a href="https://cutt.ly/0rgXGTUL" target="_blank" class="wrapper">
+                    <div class="inside">
+                        <div class="shiny s1"></div>
+                        <img src="images/viplerim/bankobet.jpeg?v=0.91123519461194" alt="bankobet" loading="lazy">
+                    </div>
+                </a>
+            </div><div class="card">
+                <a href="https://cutt.ly/MrgXHoTc" target="_blank" class="wrapper">
+                    <div class="inside">
+                        <div class="shiny s2"></div>
+                        <img src="images/viplerim/betewin.jpeg?v=0.10474881534686" alt="betewin" loading="lazy">
+                    </div>
+                </a>
+            </div><div class="card">
+                <a href="https://cutt.ly/HrgXGpCC" target="_blank" class="wrapper">
+                    <div class="inside">
+                        <div class="shiny s3"></div>
+                        <img src="images/viplerim/betkom.jpeg?v=0.32410027940017" alt="betkom" loading="lazy">
+                    </div>
+                </a>
+            </div><div class="card">
+                <a href="https://cutt.ly/ZrgXHIaR" target="_blank" class="wrapper">
+                    <div class="inside">
+                        <div class="shiny s4"></div>
+                        <img src="images/viplerim/tarafbet.jpeg?v=0.046337204075575" alt="tarafbet" loading="lazy">
+                    </div>
+                </a>
+            </div><div class="card">
+                <a href="https://cutt.ly/nrgXGwWy" target="_blank" class="wrapper">
+                    <div class="inside">
+                        <div class="shiny s5"></div>
+                        <img src="images/viplerim/bahis.jpeg?v=0.24930461414592" alt="bahis" loading="lazy">
+                    </div>
+                </a>
+            </div><div class="card">
+                <a href="https://cutt.ly/wrgXG4VT" target="_blank" class="wrapper">
+                    <div class="inside">
+                        <div class="shiny s6"></div>
+                        <img src="images/viplerim/mariobet.jpeg?v=0.3200217957236" alt="mariobet" loading="lazy">
+                    </div>
+                </a>
+            </div></div></div><hr class="d-none special-hidden3">
+
+    <!-- Kartlar2 Alanı -->
+    <div class="cards" id="cards2" style="margin-top: 0"><div class="card">
+                <a href="https://cutt.ly/veoT5cGq" target="_blank">
+                    <img src="images/content/matadorbet.png" alt="matadorbet">
+                </a>
+            </div><div class="card">
+                <a href="https://cutt.ly/Feg1piJG" target="_blank">
+                    <video autoplay loop muted playsinline>
+                        <source src="images/content/fixbet.webm?v=0.77983927250832" type="video/webm">
+                    </video>
+                </a>
+            </div><div class="card">
+                <a href="http://kisalt1.gg/ogedayx" target="_blank">
+                    <img src="images/content/xbahis.png" alt="xbahis">
+                </a>
+            </div><div class="card">
+                <a href="https://cutt.ly/weShcqHl" target="_blank">
+                    <img src="images/content/otobet.png" alt="otobet">
+                </a>
+            </div><div class="card">
+                <a href="https://t2m.io/Ogedaypro" target="_blank">
+                    <img src="images/content/betpipo.png" alt="betpipo">
+                </a>
+            </div><div class="card">
+                <a href="https://bo.t2m.io/ogedaypro" target="_blank">
+                    <img src="images/content/betoffice.png" alt="betoffice">
+                </a>
+            </div><div class="card">
+                <a href="https://cutt.ly/7eDXRJFJ" target="_blank">
+                    <img src="images/content/zlot.png?v=0.62854396581116" alt="zlot">
+                </a>
+            </div><div class="card">
+                <a href="https://cutt.ly/8rlPKTgC" target="_blank">
+                    <img src="images/content/slotin.png" alt="slotin">
+                </a>
+            </div><div class="card">
+                <a href="https://tracker.getrupiaffiliate.org/link?btag=83587105_424759" target="_blank">
+                    <img src="images/content/betrupi.png?v=0.72637875272258" alt="betrupi">
+                </a>
+            </div><div class="card">
+                <a href="https://bit.ly/3Y5U9h5" target="_blank">
+                    <img src="images/content/marsbahis.png" alt="marsbahis">
+                </a>
+            </div></div><hr class="d-none special-hidden4">
+
+
+<!-- SAYAC -->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    :root {
+        --accent-color: #723cfa;
+        --bg-color: #121212;
+        --text-color: #FFFFFF;
+        --text-secondary: #AAAAAA;
+        --surface-color: #1E1E1E;
+    }
+    .countdown-wrapper, .countdown-info {
+        font-family: Montserrat, sans-serif;
+    }
+    .countdown-info {
+        font-weight: 600;
+        color: #ffffff;
+        text-align: center;
+        background: var(--accent-color);
+    }
+    .countdown-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-20px);
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards 0.8s;
+    }
+    .countdown-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 1rem;
+        position: relative;
+    }
+    .countdown-number {
+        color: #fff;
+        font-size: 3rem;
+        font-weight: 700;
+        width: 80px;
+        height: 80px;
+        background-color: var(--surface-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        margin-bottom: 0.5rem;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .countdown-number::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+        animation: scanline 2s linear infinite;
+    }
+    .countdown-label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--text-secondary);
+    }
+    @keyframes fadeInUp {
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    @keyframes scanline {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(100%);
+        }
+    }
+    @media (max-width: 600px) {
+        .countdown-number {
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+        }
+        .countdown-box {
+            margin: 0 0.5rem;
+        }
+        .sayac-container {
+            padding: 1.5rem;
+        }
+    }
+</style>
+<div class="countdown-info d-none">
+    BİR SONRAKİ ZAR ATMA ŞANSINIZA KALAN SÜRE
+</div>
+<div class="countdown-wrapper d-none">
+    <div class="countdown-box">
+        <div class="countdown-number" id="days">
+            00
+        </div>
+        <div class="countdown-label">
+            Gün
+        </div>
+    </div>
+    <div class="countdown-box">
+        <div class="countdown-number" id="hours">
+            00
+        </div>
+        <div class="countdown-label">
+            Saat
+        </div>
+    </div>
+    <div class="countdown-box">
+        <div class="countdown-number" id="minutes">
+            00
+        </div>
+        <div class="countdown-label">
+            Dakika
+        </div>
+    </div>
+    <div class="countdown-box">
+        <div class="countdown-number" id="seconds" style="color: var(--text-color);">
+            00
+        </div>
+        <div class="countdown-label">
+            Saniye
+        </div>
+    </div>
+</div>
+
+<script>
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+    tomorrow.setHours(07, 00, 00, 0); // Set to 07:00:00.000 // TO DO: Beni panele bagla
+
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+    function updateCountdown() {
+        const now = new Date();
+        const diff = tomorrow - now;
+
+        if (diff <= 0) {
+            // Bittiğinde
+            daysEl.textContent = "00";
+            hoursEl.textContent = "00";
+            minutesEl.textContent = "00";
+            secondsEl.textContent = "00";
+            window.location.reload();
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        daysEl.textContent = days.toString().padStart(2, '0');
+        hoursEl.textContent = hours.toString().padStart(2, '0');
+        minutesEl.textContent = minutes.toString().padStart(2, '0');
+        secondsEl.textContent = seconds.toString().padStart(2, '0');
+
+        // Add pulse effect to seconds
+        secondsEl.style.color = 'var(--accent-color)';
+        setTimeout(() => {
+            secondsEl.style.color = 'var(--text-color)';
+        }, 500);
+    }
+    // Initialize countdown
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Mousemove effect for countdown numbers
+    document.querySelectorAll('.countdown-number').forEach(box => {
+        box.addEventListener('mouseover', function() {
+            this.style.transform = 'scale(1.05)';
+            this.style.backgroundColor = '#2A2A2A';
+            this.style.transition = 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        });
+
+        box.addEventListener('mouseout', function() {
+            this.style.transform = 'scale(1)';
+            this.style.backgroundColor = 'var(--surface-color)';
+        });
+    });
+</script>
+
+</div> <!-- container end -->
+
+
+
+<!-- ZAR GIF -->
+<script src="dice/fp.min.js"></script>
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+<style>
+    .zar-text-overlay {
+        position: fixed;
+        bottom: 10px;
+        color: white;
+        font-size: 24px;
+        font-family: Montserrat, sans-serif;
+        opacity: 0;
+        animation: slideUp 2s ease-in-out forwards;
+        pointer-events: none;
+    }
+    @keyframes slideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+<div id="desktop_zar_yerlestir"></div>
+<!-- ZAR MI SAYAC MI? -->
+<script>
+    var kalan_hak = 0; // GLOBAL DEĞİŞKEN
+    FingerprintJS.load().then(fp => {
+        fp.get().then(result => {
+
+            function swal_or_alert(mesaj) {
+                if (typeof Swal !== 'undefined') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Bilgi',
+                        text: mesaj
+                    });
+                } else {
+                    alert(mesaj);
+                }
+            }
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://ogedaybonuslari.com/api/getClaim.php', false); // Senkron istek
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify({
+                f: result.visitorId
+            }));
+            if (xhr.status === 200) {
+                try {
+                    responseData = JSON.parse(xhr.responseText);
+                    kalan_hak = responseData.hak;
+                } catch (parseError) {
+                    console.error('JSON parse hatası:', parseError);
+                    console.error('Yanıt içeriği:', xhr.responseText);
+                }
+                if (responseData.durum == 1)
+                {
+                    // zar atabilir ZAR GÖSTERİLECEK
+                    let is_mobile = isMobile();
+                    dotlottie_player =
+                    `<div class="zar-container">
+                        <dotlottie-player
+                            onclick="kurallar()"
+                            src="https://lottie.host/cd4db382-ee2c-4b68-8b8a-32511bca582a/dwZM3Cgsvg.lottie"
+                            background="transparent"
+                            speed="1"
+                            style="cursor:pointer; `+(is_mobile ?  'width:180px; height:214px; cursor:pointer; border: 2px dashed var(--accent-color); border-radius:34px;'  :  'width:250px; height:250px; position:fixed; bottom:0; right:0;'  )+`"
+                            loop
+                            autoplay
+                        ></dotlottie-player>
+                        <div class="zar-text-overlay" style="`+(is_mobile? 'margin-left:20px; position:relative; bottom:50px;' : 'right:50px;')+`">ZARLARI AT</div>
+                    </div>`;
+                    if (is_mobile) {
+                        cardDiv = document.createElement('div');
+                        cardDiv.classList.add('card');
+                        cardDiv.innerHTML = dotlottie_player;
+                        document.querySelector('#cards2').appendChild(cardDiv);
+                    } else {
+                        document.querySelector('#desktop_zar_yerlestir').outerHTML = dotlottie_player;
+                    }
+                }
+                else if (responseData.durum == 0 || responseData.durum == 2)
+                {
+                    if (responseData.hak == 0) {
+                        // zar atamaz SAYAÇ GÖSTERİLECEK
+                        document.querySelector('.countdown-wrapper').classList.remove('d-none');
+                        document.querySelector('.countdown-info').classList.remove('d-none');
+                    }
+                    if (responseData.durum == 2) {
+                        // AMA payout ekranı gösterilmeli
+                        function checkFunction() {
+                            const functionName = 'showCustomAlert';
+                            // Fonksiyonun varlığını kontrol et
+                            if (typeof window[functionName] === 'function') {
+
+                                // zar atabilir ZAR GÖSTERİLECEK
+                                let is_mobile = isMobile();
+                                dotlottie_player =
+                                `<div class="zar-container">
+                                    <dotlottie-player
+                                        onclick="showCustomAlert('basarili')"
+                                        src="https://lottie.host/7f435fca-6e1f-4731-909b-23de23c4eaa7/vs1TkQ9cgJ.lottie"
+                                        background="transparent"
+                                        speed="1"
+                                        style="cursor:pointer; `+(is_mobile ?  'width:180px; height:214px; cursor:pointer; border: 2px dashed var(--accent-color); border-radius:34px;'  :  'width:250px; height:250px; position:fixed; bottom:0; right:0;'  )+`"
+                                        loop
+                                        autoplay
+                                        id="withdraw"
+                                    ></dotlottie-player>
+                                    <div class="zar-text-overlay" style="`+(is_mobile? 'margin-left:8px; position:relative; bottom:50px;' : 'right:45px; bottom:40px;')+`">KAZANCI ÇEK</div>
+                                </div>`;
+                                if (is_mobile) {
+                                    cardDiv = document.createElement('div');
+                                    cardDiv.classList.add('card');
+                                    cardDiv.innerHTML = dotlottie_player;
+                                    document.querySelector('#cards2').appendChild(cardDiv);
+                                } else {
+                                    document.querySelector('#desktop_zar_yerlestir').outerHTML = dotlottie_player;
+                                }
+                                //;
+                            } else {
+                                setTimeout(checkFunction, 50);
+                            }
+                        }
+                        setTimeout(checkFunction, 50);
+                    }
+                } else {
+                    console.error('[HATA]: '+xhr.responseText);
+                    //swal_or_alert(xhr.responseText);
+                }
+            } else {
+                console.error('Hata kodu: '+xhr.status);
+                console.error('Hata açıklaması: '+xhr.responseText);
+                //swal_or_alert('Zar Atma hakkınız sorgulanamadı. (2) [Teknik Hata]');
+            }
+        });
+    });
+</script>
+
+
+
+<!-- ZAR gif'e tıklanınca gözüken ÖN kurallar kısımı -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<!-- select css in the swal -->
+<style>
+    .select2-container .select2-selection--single {
+        height: 40px;
+    }
+    .select2-container .select2-selection--single, .select2-results span, .select2-selection__rendered span {
+        display: flex;
+        align-items: center;
+    }
+    .select2-container img {
+        width: 50px;
+        height: 35px;
+        margin-right: 8px;
+    }
+    .select2-container.select2-container--open {
+        z-index: 1060;
+    }
+    .select2-container--default .select2-selection--single {
+        background-color: mintcream;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+        top: 7px;
+    }
+    .select2-container {
+        margin-bottom: 0.6rem !important;
+    }
+</style>
+<!-- checkbox css in the swal -->
+<style>
+    .checkbox-wrapper {
+        display: flex;
+        align-items: flex-end;
+        cursor: pointer;
+        box-sizing: border-box;
+        --checkbox-height: 25px;
+    }
+    @-moz-keyframes dothabottomcheck-19 {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: calc(var(--checkbox-height) / 2);
+        }
+    }
+    @-webkit-keyframes dothabottomcheck-19 {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: calc(var(--checkbox-height) / 2);
+        }
+    }
+    @keyframes dothabottomcheck-19 {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: calc(var(--checkbox-height) / 2);
+        }
+    }
+    @keyframes dothatopcheck-19 {
+        0% {
+            height: 0;
+        }
+        50% {
+            height: 0;
+        }
+        100% {
+            height: calc(var(--checkbox-height) * 1.2);
+        }
+    }
+    @-webkit-keyframes dothatopcheck-19 {
+        0% {
+            height: 0;
+        }
+        50% {
+            height: 0;
+        }
+        100% {
+            height: calc(var(--checkbox-height) * 1.2);
+        }
+    }
+    @-moz-keyframes dothatopcheck-19 {
+        0% {
+            height: 0;
+        }
+        50% {
+            height: 0;
+        }
+        100% {
+            height: calc(var(--checkbox-height) * 1.2);
+        }
+    }
+    .checkbox-wrapper input[type=checkbox] {
+        opacity: 0;
+        position: relative;
+        left: 20px;
+        bottom: 5px;
+    }
+    .checkbox-wrapper .check-box {
+        height: var(--checkbox-height);
+        width: var(--checkbox-height);
+        background-color: transparent;
+        border: calc(var(--checkbox-height) * .1) solid #000;
+        border-radius: 5px;
+        position: relative;
+        display: inline-block;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -moz-transition: border-color ease 0.2s;
+        -o-transition: border-color ease 0.2s;
+        -webkit-transition: border-color ease 0.2s;
+        transition: border-color ease 0.2s;
+        cursor: pointer;
+    }
+    .checkbox-wrapper .check-box::before,
+    .checkbox-wrapper .check-box::after {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: absolute;
+        height: 0;
+        width: calc(var(--checkbox-height) * .2);
+        background-color: #34b93d;
+        display: inline-block;
+        -moz-transform-origin: left top;
+        -ms-transform-origin: left top;
+        -o-transform-origin: left top;
+        -webkit-transform-origin: left top;
+        transform-origin: left top;
+        border-radius: 5px;
+        content: " ";
+        -webkit-transition: opacity ease 0.5;
+        -moz-transition: opacity ease 0.5;
+        transition: opacity ease 0.5;
+    }
+    .checkbox-wrapper .check-box::before {
+        top: calc(var(--checkbox-height) * .72);
+        left: calc(var(--checkbox-height) * .41);
+        box-shadow: 0 0 0 calc(var(--checkbox-height) * .05) var(--background-color);
+        -moz-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+        -o-transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+    }
+    .checkbox-wrapper .check-box::after {
+        top: calc(var(--checkbox-height) * .37);
+        left: calc(var(--checkbox-height) * .05);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    .checkbox-wrapper input[type=checkbox]:checked + .check-box,
+    .checkbox-wrapper .check-box.checked {
+        border-color: #34b93d;
+    }
+    .checkbox-wrapper input[type=checkbox]:checked + .check-box::after,
+    .checkbox-wrapper .check-box.checked::after {
+        height: calc(var(--checkbox-height) / 2);
+        -moz-animation: dothabottomcheck-19 0.2s ease 0s forwards;
+        -o-animation: dothabottomcheck-19 0.2s ease 0s forwards;
+        -webkit-animation: dothabottomcheck-19 0.2s ease 0s forwards;
+        animation: dothabottomcheck-19 0.2s ease 0s forwards;
+    }
+    .checkbox-wrapper input[type=checkbox]:checked + .check-box::before,
+    .checkbox-wrapper .check-box.checked::before {
+        height: calc(var(--checkbox-height) * 1.2);
+        -moz-animation: dothatopcheck-19 0.4s ease 0s forwards;
+        -o-animation: dothatopcheck-19 0.4s ease 0s forwards;
+        -webkit-animation: dothatopcheck-19 0.4s ease 0s forwards;
+        animation: dothatopcheck-19 0.4s ease 0s forwards;
+    }
+</style>
+<!-- some spesification in the swal -->
+<style>
+    .mb-1 {
+        margin-bottom: 0.6rem !important;
+    }
+    textarea {
+        display: flow-root;
+        width: 100%;
+        height: 40px;
+        max-height: 200px;
+        resize: vertical;
+        overflow-y: hidden;
+
+        font-weight: normal;
+        box-sizing: border-box;
+        background-color: mintcream;
+        border-radius: 5px;
+        border: 1px solid #aaa;
+        padding: 10px;
+        font-size: 18px;
+    }
+    textarea::placeholder {
+        color: #999;
+    }
+    .cf-turnstile div {
+        border-radius: 6px;
+        border-color: transparent;
+        display: flex;
+        overflow: hidden;
+    }
+</style>
+<!-- swal container -->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Cal+Sans&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Special+Gothic+Expanded+One&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+    * {
+        font-family: 'Barlow', sans-serif;
+    }
+    .swal-container li {
+        padding: 3px 0px;
+    }
+    .custom-swal-popup {
+        background: transparent !important;
+        border-radius: 10px !important;
+        border: 5px solid #000000 !important;
+    }
+    .custom-swal-title {
+        font-size: 2.3em !important;
+        color: #ffffff !important;
+        font-weight: bold !important;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 5px rgba(0, 0, 0, 1) !important;
+        font-family: 'Special Gothic Expanded One', sans-serif;
+    }
+    .custom-swal-text {
+        font-size: 1.2em !important;
+        color: #ffffff !important;
+        text-shadow: 0 0 8px rgba(0, 0, 0, 1), 0 0 4px rgba(0, 0, 0, 1) !important;
+    }
+    .custom-swal-popup.basarili {
+        background: rgba(186, 247, 209, 0.8) !important;
+    }
+    .custom-swal-title.basarili {
+        letter-spacing: 3px;
+        text-shadow: 0 0 3px rgba(0, 0, 0, 0.8), 0 0 1px rgba(0, 0, 0, 1) !important;
+    }
+    .custom-swal-popup.basarili {
+        border-color: #4CAF50 !important;
+    }
+    .custom-swal-popup.basarisiz {
+        border-color: #FFC107 !important;
+    }
+    .special-button.payout {
+        background-color: #c2fbd7;
+        box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+        color: green;
+        display: flex;
+        float: right;
+        margin: auto;
+    }
+    .special-button.payout img {
+        width: 25px;
+        margin-right: 5px;
+    }
+    .special-button.payout:hover {
+        box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+    }
+</style>
+<!-- ZAR kurallar & resultAlert fonksiyon script -->
+<script>
+    function kurallar() {
+        Swal.fire({
+            title: 'ŞANSLI ZAR',
+            html:
+            `<div class="swal-container">
+                <h2>~ Kurallar ~</h2>
+                <ul style="list-style-type:none; text-align:start; margin-top:3px;"><!-- li_start -->
+<li><b>1-)</b> Günlük zar atma hakkınız: <span style="background:greenyellow; font-weight:bold; padding: 0 7px;" degisken_sayi_span="">3</span></li>
+<li><b>2-) Zarlar 6 + 6 geldiği zaman <kazanc>250</kazanc>₺ nakit kazanırsınız.</b></li>
+<li><b>3-)</b> Sayaç her gün sabah 07:00 saatinde sıfırlanır.</li>
+<li><b>4-)</b> Sistem haksız rekabeti önlemek için IP adresinizden, her gün 1 kez katılmanıza izin verir.</li>
+<li><b>5-)</b> Ogedaypro zar atma etkinliğini çerçevesinde tüm haklarını saklı tutar.</li>
+<li><b>6-)</b> Zarları At butonuna tıkladığınızda zar atma işlemi gerçekleşir.</li>
+<!-- li_end --></ul>
+            </div>`,
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonText: '\n' +
+                '<?xml version="1.0" encoding="utf-8"?>\n' +
+                '<svg style="vertical-align: middle" width="25px" height="25px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"><path fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M448,341.37V170.61A32,32,0,0,0,432.11,143l-152-88.46a47.94,47.94,0,0,0-48.24,0L79.89,143A32,32,0,0,0,64,170.61V341.37A32,32,0,0,0,79.89,369l152,88.46a48,48,0,0,0,48.24,0l152-88.46A32,32,0,0,0,448,341.37Z"/><polyline fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" points="69 153.99 256 263.99 443 153.99"/><line fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" x1="256" y1="463.99" x2="256" y2="263.99"/><ellipse cx="256" cy="152" rx="24" ry="16"/><ellipse cx="208" cy="296" rx="16" ry="24"/><ellipse cx="112" cy="328" rx="16" ry="24"/><ellipse cx="304" cy="296" rx="16" ry="24"/><ellipse cx="400" cy="240" rx="16" ry="24"/><ellipse cx="304" cy="384" rx="16" ry="24"/><ellipse cx="400" cy="328" rx="16" ry="24"/></svg>Zarları At\n' +
+                '<span style="background:gold; color:black; font-weight:bold; padding:1px; border-radius:3px; margin-left:2px;">Kalan Hak: '+kalan_hak+'</span>',
+            cancelButtonText: 'Vazgeç'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                openModal(); // Zar Atma Penceresi
+            }
+        });
+    }
+    function showCustomAlert(x) {
+        if (x == 'basarili')
+        {
+            openModal2();
+            Swal.fire({
+                title: '🎉 TEBRİKLER ✨',
+                html:
+                `<!-- Dostum bu mesajım sana! Hiç uğraşma Back-End kontrollerini yaptık! Buradan sana ekmek çıkmaz! -->
+                <div class="swal-container">
+                    <form action="https://ogedaybonuslari.com/api/setWinner.php" method="POST">
+                        <input type="hidden" id="f" name="f" value="">
+                        <select id="odeme_yontemi" name="odeme_yontemi" class="mb-1" style="width: 100%" required>
+                            <option></option>
+                            <option value="1" data-img="images/usdt.svg">KRİPTO USDT (TRC-20)</option>
+                            <option value="2" data-img="images/papara.svg">PAPARA</option>
+                            <option value="3" data-img="images/iban.svg">IBAN</option>
+                        </select>
+                        <textarea class="custom-swal-textarea mb-1 d-none" id="odeme_adsoyad" name="odeme_adsoyad" placeholder="Hesap Sahibinin Adı Soyadı" autocomplete="nope"></textarea>
+                        <textarea class="custom-swal-textarea mb-1" id="odeme_cuzdan" name="odeme_cuzdan" placeholder="Cüzdan Numaranız" required></textarea>
+                        <textarea class="custom-swal-textarea mb-1" id="odeme_iletisim" name="odeme_iletisim" placeholder="İletişim Bilginiz (isteğe bağlı)"></textarea>
+                        <div class="checkbox-wrapper mb-1">
+                            <input type="checkbox" id="onay" name="onay" required />
+                            <label for="onay" class="check-box"></label>
+                            <label for="onay" class="custom-swal-text" style="padding-left: 5px; font-size: 16px !important;">Ödeme bilgilerimi doğru yazdığımı onaylıyorum.</label>
+                        </div>
+                        <div class="mb-1" style="display: block; flex-flow: row;">
+                            <div class="cf-turnstile" data-sitekey="0x4AAAAAABGday0q1A3ia3CF" data-size="flexible" data-theme="light"></div>
+                        </div>
+                        <div class="swal-buttons mb-1" style="display: flex">
+                            <button class="special-button payout" role="button" type="submit">
+                                <img src="images/payout.svg">
+                                Ödeme Talep Et
+                            </button>
+                        </div>
+                    </form>
+                </div>`,
+                customClass: {
+                    popup: 'custom-swal-popup basarili',
+                    title: 'custom-swal-title basarili'
+                },
+                backdrop: 'rgba(0,0,0,0.0)',
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                showConfirmButton: false,
+                confirmButtonText: 'Tamam',
+                confirmButtonColor: '#4CAF50',
+                willClose: () => {
+                    document.querySelector('body > *:not(.swal2-container)').removeAttribute('inert');
+                },
+                preConfirm: () => {
+                    let token = document.querySelector('input[name="cf-turnstile-response"]')?.value;
+                    if(!token) {
+                        Swal.showValidationMessage('Lütfen CAPTCHA doğrulamasını tamamlayın.');
+                        return false;
+                    }
+                    return token;
+                },
+                didOpen: () => {
+                    // dışarıdaki buttona tıklanabilsin diye
+                    document.querySelector('.swal2-container').style.pointerEvents = 'none';
+                    document.querySelector('.swal2-popup').style.pointerEvents = 'auto';
+
+                    // render cloudflare turnstile
+                    if (typeof turnstile !== 'undefined') {
+                        turnstile.render('.cf-turnstile', {
+                            sitekey: '0x4AAAAAABGday0q1A3ia3CF'
+                        });
+                    } else {
+                        Swal.showValidationMessage('CAPTCHA yüklenemedi. Sayfayı yenilemeyi deneyin.');
+                    }
+
+                    // Fingerprint
+                    document.querySelector('body > *:not(.swal2-container)').setAttribute('inert', '');
+                    FingerprintJS.load().then(fp => {
+                        fp.get().then(result => {
+                            document.querySelector('.swal-container form input[name="f"]').value = result.visitorId;
+                        });
+                    });
+                    // Select2
+                    $('#odeme_yontemi').select2({
+                        placeholder: 'Ödeme Yöntemini Seçin',
+                        templateResult: formatOption,    // Açılır menüdeki seçeneklerin görünümü
+                        templateSelection: formatOption, // Seçilen seçeneğin görünümü
+                        minimumResultsForSearch: -1      // Arama çubuğunu devre dışı bırakır
+                    });
+                    function formatOption(option) {
+                        if (!option.id) {
+                            return option.text; // Placeholder veya boş seçenek için
+                        }
+                        var img = $(option.element).data('img');
+                        var $option = $(
+                            '<span><img src="' + img + '" /> ' + option.text + '</span>'
+                        );
+                        return $option;
+                    }
+
+                    // Textarea
+                    // bu sırf css-field-sizing eski tarayıcılarda desteklemiyor diye yazılmış bir JS
+                    for (let t of document.querySelectorAll('textarea.custom-swal-textarea')) {
+                        t.addEventListener('input', function (e) {
+                            e = e.target;
+                            if (e.value=='') {
+                                e.style.height = '40px';
+                                e.style.overflowY = 'hidden';
+                                return;
+                            }
+                            e.style.overflowY = 'atuo';
+                            e.style.height = 'auto';
+                            e.style.height = this.scrollHeight+'px';
+                        });
+                    }
+
+                    // Textarea Placeholder
+                    $('#odeme_yontemi').on('select2:select', function(e) {
+                        const placeholders = {
+                            '2': 'Papara Hesap No',
+                            '3': 'IBAN Numaranız',
+                        };
+                        $('#odeme_cuzdan').attr('placeholder', placeholders[this.value] || 'Cüzdan Numaranız');
+                        $('#odeme_adsoyad')[(this.value==3? 'remove' : 'add')+'Class']('d-none');
+                        $('#odeme_adsoyad').prop('required',this.value==3);
+                    });
+
+                    // onSubmit (bu kısım işlev kazanmadı ama olsun yazzdık o kadar dursun bari)
+                    form = document.querySelector('.swal-container form');
+                    form.addEventListener('submit', function (e) {
+                        if (!form.checkValidity()) {
+                            e.preventDefault();
+                            Swal.showValidationMessage('Lütfen zorunlu alanları doldurun!');
+                        }
+                    });
+
+                    return Promise.resolve();
+                }
+            });
+        }
+        else if (x == 'basarisiz')
+        {
+            FingerprintJS.load().then(fp => {
+                fp.get().then(result => {
+                    const xhr_again = new XMLHttpRequest();
+                    xhr_again.open('POST', 'https://ogedaybonuslari.com/api/getClaim.php', false); // Senkron istek
+                    xhr_again.setRequestHeader('Content-Type', 'application/json');
+                    xhr_again.send(JSON.stringify({
+                        f: result.visitorId
+                    }));
+                    if (xhr_again.status === 200) {
+                        try {
+                            responseData = JSON.parse(xhr_again.responseText);
+                            kalan_hak = responseData.hak;
+                            xhr_again_after(Number(responseData.durum));
+                        } catch (parseError) {
+                            console.error('JSON parse hatası:', parseError);
+                            console.error('Yanıt içeriği:', xhr.responseText);
+                            xhr_again_after(0);
+                        }
+                    } else {
+                        xhr_again_after(0);
+                    }
+                });
+            });
+            function xhr_again_after(zar_atabilir_mi) {
+                iki_mi = false;
+                if (zar_atabilir_mi == 2) {
+                    zar_atabilir_mi = 0;
+                    iki_mi = true;
+                }
+                Swal.fire({
+                    title: 'BAŞARAMADIK ABİ',
+                    // '<video autoplay playsinline style="width:370px;"><source src="images/basaramadik.webm" type="video/webm" /></video><br>'+
+                    html: (zar_atabilir_mi? 'Şansınızı tekrar deneyebilirsiniz.' : 'Yarın tekrar denemeyi unutmayın.'),
+                    customClass: {
+                        popup: 'custom-swal-popup basarisiz',
+                        title: 'custom-swal-title',
+                        htmlContainer: 'custom-swal-text'
+                    },
+                    backdrop: 'rgba(0,0,0,0.0)',
+                    //allowOutsideClick: true,
+                    showConfirmButton: zar_atabilir_mi,
+                    confirmButtonText: '\n' +
+                        '<?xml version="1.0" encoding="utf-8"?>\n' +
+                        '<svg style="vertical-align: middle" width="25px" height="25px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"><path fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M448,341.37V170.61A32,32,0,0,0,432.11,143l-152-88.46a47.94,47.94,0,0,0-48.24,0L79.89,143A32,32,0,0,0,64,170.61V341.37A32,32,0,0,0,79.89,369l152,88.46a48,48,0,0,0,48.24,0l152-88.46A32,32,0,0,0,448,341.37Z"/><polyline fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" points="69 153.99 256 263.99 443 153.99"/><line fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" x1="256" y1="463.99" x2="256" y2="263.99"/><ellipse cx="256" cy="152" rx="24" ry="16"/><ellipse cx="208" cy="296" rx="16" ry="24"/><ellipse cx="112" cy="328" rx="16" ry="24"/><ellipse cx="304" cy="296" rx="16" ry="24"/><ellipse cx="400" cy="240" rx="16" ry="24"/><ellipse cx="304" cy="384" rx="16" ry="24"/><ellipse cx="400" cy="328" rx="16" ry="24"/></svg>Zarları Tekrar At\n' +
+                        '<span style="background:gold; color:black; font-weight:bold; padding:1px; border-radius:3px; margin-left:2px;">Kalan Hak: '+kalan_hak+'</span>',
+                    showCancelButton: true,
+                    cancelButtonText: zar_atabilir_mi? 'Vazgeç' : 'Tamam',
+                    cancelButtonColor: zar_atabilir_mi? '' : '#FFC107',
+                    didOpen: () => {
+                        //document.querySelector('.swal2-container').style.pointerEvents = 'none';
+                        //document.querySelector('.swal2-popup').style.pointerEvents = 'auto';
+                    }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        if (zar_atabilir_mi) {
+                            closeModal();
+                            openModal();
+                        } else {
+                            window.location.reload();
+                        }
+                    } else {
+                        window.location.reload();
+                    }
+                });
+            }
+        }
+        else
+        {
+            function isObject(value) {
+                return value !== null && typeof value === 'object' && !Array.isArray(value);
+            }
+            if (!isObject(x)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'HATAx',
+                    text: x,
+                    confirmButtonText: 'Tamam'
+                }).then(() => {
+                    closeModal();
+                });
+            }
+        }
+    }
+    window.addEventListener('message', (event) => {
+        if (['basarili','basarisiz','Teknik bir hata olustu. Lütfen daha sonra tekrar deneyiniz. (1).'].indexOf(event.data) > -1) {
+            showCustomAlert(event.data);
+        }
+    });
+</script>
+
+<!-- ZAR gif'e tıklanınca gözüken 2NCI zar penceresi kısımı -->
+<script>
+    function openModal() {
+        let modal = document.getElementById('open-modal');
+        let iframe = document.getElementById('modal-iframe');
+        modal.classList.add('active');
+        iframe.src = 'dice/index.html';
+    }
+    function openModal2() {
+        // sadece backdrop filter blur ve close buttonunu görmek için yapıyoruz
+        document.getElementById('open-modal').classList.add('active');
+    }
+    function closeModal() {
+        let modal = document.getElementById('open-modal');
+        let iframe = document.getElementById('modal-iframe');
+        modal.classList.remove('active');
+        iframe.src = '';
+    }
+</script>
+<!-- modal + button css -->
+<style>
+    .special-button {
+        border-radius: 50px;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Roboto, sans-serif;
+        padding: 7px 20px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 250ms;
+        border: 0;
+        font-size: 16px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        float: right;
+        margin: 10px;
+    }
+    .special-button:hover {
+        transform: scale(1.05) rotate(-1deg);
+    }
+    /* Pencere yüksekliğinin yarısından modal yüksekliğini yaklaşık olarak çıkar */
+    :has(.swal2-container) .special-button.close {
+        /*bottom: calc(50vh - 289px);*/
+        bottom: calc(50vh - 175px); /* başarısız modaldaki close button konumu */
+    }
+    :has(.swal2-container) :has(video) .swal2-actions {
+        margin-top: 10px;
+    }
+    :has(.swal2-container) :has(.special-button.payout) .special-button.close {
+        bottom: calc(50vh - 275px); /* başarılı modaldaki close button konumu */
+    }
+    :has(.swal2-container) :has(#odeme_adsoyad:not(.d-none)) .special-button.close {
+        bottom: calc(50vh - 300px); /* başarılı modaldaki close button konumu + IBAN adsoyad */
+    }
+    :has(.swal2-container) :has(#odeme_adsoyad:not(:placeholder-shown)) .special-button.close {
+        bottom: calc(50vh - 325px); /* başarılı modaldaki close button konumu + textarea uzadığı zaman */
+    }
+    .special-button.close {
+        background-color: #fbc2c2;
+        box-shadow: rgba(187, 44, 44, .2) 0 -25px 18px -14px inset, rgba(187, 44, 44, .15) 0 1px 2px, rgba(187, 44, 44, .15) 0 2px 4px, rgba(187, 44, 44, .15) 0 4px 8px, rgba(187, 44, 44, .15) 0 8px 16px, rgba(187, 44, 44, .15) 0 16px 32px;
+        color: red;
+
+        position: fixed; /* Sayfanın sabit bir yerinde durması için */
+        bottom: 15px; /* Alt kenardan 20px yukarıda */
+        left: 50%; /* Yatayda merkeze hizalamak için */
+        transform: translateX(-55%); /* Yatayda tam ortalamak için */
+    }
+    .special-button.close:hover {
+        box-shadow: rgba(187, 44, 44, .35) 0 -25px 18px -14px inset, rgba(187, 44, 44, .25) 0 1px 2px, rgba(187, 44, 44, .25) 0 2px 4px, rgba(187, 44, 44, .25) 0 4px 8px, rgba(187, 44, 44, .25) 0 8px 16px, rgba(187, 44, 44, .25) 0 16px 32px;
+    }
+    /*
+    function openModal2() sayesinde buna gerek kalmadı!
+    :has(#withdraw) .swal2-backdrop-show {
+        backdrop-filter: blur(5px);
+    }
+    */
+    .modal-window {
+        position: fixed;
+        backdrop-filter: blur(5px);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s;
+    }
+    .modal-window.active {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .modal-window > div {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 1rem;
+    }
+
+</style>
+<style id="tg-kaldir">
+    /* USTA AYARI */
+    @media (max-width: 1000px) {
+        div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) svg {
+            width: 40px !important;
+            height: 40px !important;
+            margin-right: 9px !important;
+        }
+        div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm),
+        div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel) {
+            font-size: 2rem !important;
+        }
+        div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) span {
+            padding: 4px 12px 6px 12px !important;
+            margin-left: 10px !important;
+            border-radius: 10px !important;
+        }
+        div:where(.swal2-container) div:where(.swal2-popup) {
+            width: 44vh !important;
+        }
+        .container:has(.countdown-wrapper.d-none) {
+            padding-bottom: 300px !important;
+        }
+        dotlottie-player {
+            position: fixed !important;
+            bottom: 50px !important;
+            right: 50px !important;
+            background: #fff !important;
+            border-width: 4px !important;
+            border-radius: 100% !important;
+            height: 180px !important;
+        }
+        .zar-text-overlay {
+            margin-left: 20px !important;
+            position: fixed !important;
+            bottom: 84px !important;
+            right: 66px !important;
+            color: #723cfa !important;
+            font-weight: 600 !important;
+        }
+        .special-button.close {
+            font-size: 2rem;
+            display: inline-flex;
+            align-items: center;
+        }
+        .special-button.close svg {
+            width: 25px !important;
+            height: 25px !important;
+            margin-right: 9px;
+        }
+        :has(.swal2-container) .special-button.close {
+            bottom: calc(50vh - 275px) !important;
+        }
+        .custom-swal-title {
+            font-size: 4em !important;
+        }
+        .custom-swal-text {
+            font-size: 3em !important;
+        }
+        .countdown-info {
+            font-size: 2.1em !important;
+        }
+        .countdown-label {
+            font-size: 1.4rem !important;
+        }
+    }
+</style>
+<div id="open-modal" class="modal-window">
+    <div>
+        <button class="special-button close" role="button" onclick="window.location.reload()" title="Zar Penceresini Kapat">
+            <svg fill="red" height="18px" width="18px" style="vertical-align: bottom" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.775 460.775" xml:space="preserve" stroke="#ffffff">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                <g id="SVGRepo_iconCarrier"> <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55 c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55 c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505 c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55 l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719 c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/> </g>
+            </svg>
+            Zar Penceresini Kapat
+            </button>
+        <iframe id="modal-iframe" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+</div>
+
+</body>
+</html>
