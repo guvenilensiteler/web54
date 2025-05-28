@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FingerprintJS Exclude Test</title>
+  <script src="fp.min.js"></script>
+</head>
+<body>
+<h1>Cihaz Parmak İzi</h1>
+<p id="fingerprint"></p>
+
+<script>
+  FingerprintJS.load().then(fp => {
+    fp.get().then(result => {
+      console.log('Kullanılan Bileşenler:', JSON.stringify(result.components, null, 2));
+      const fingerprint = result.visitorId;
+      document.getElementById('fingerprint').innerText = `Cihaz Parmak İzi: ${fingerprint}`;
+    });
+  });
+</script>
+</body>
+</html>
